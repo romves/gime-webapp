@@ -1,27 +1,61 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import { Montserrat } from "next/font/google";
 
-type Props = {};
+const monserrat = Montserrat({ subsets: ["latin"] });
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
+  const [scrolling, setScrolling] = React.useState(false);
+  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
+  const [visible, setVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 100 ? setScrolling(true) : setScrolling(false);
+
+      const currentScrollPos = window.scrollY;
+
+      const isScrollingDown = currentScrollPos > prevScrollPos;
+
+      setPrevScrollPos(currentScrollPos);
+      setVisible(!isScrollingDown || currentScrollPos < 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   return (
-    <nav className="fixed w-screen border border-black bg-white z-50">
-      <div className="px-16 flex w-full py-6 text-xl justify-between">
+    <nav
+      className={`fixed w-screen ${
+        scrolling ? "bg-white shadow-lg" : "bg-transparent"
+      } z-50 transition-all`}
+      style={{
+        transition: "transform 0.2s ease-in-out",
+        transform: visible ? "translateY(0)" : "translateY(-100%)",
+      }}
+    >
+      <div className="h6 px-16 flex w-full h-[100px] text-xl justify-between">
         <Image src="/logo/Logo.svg" alt="logo" width={180} height={180} />
 
         <div className="flex items-center gap-10">
-          <ul className="flex space-x-12">
+          <ul className={`flex space-x-12 ${monserrat.className}`}>
             <li>
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/">About</Link>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/">Product</Link>
+              <Link href="/product">Product</Link>
             </li>
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
 
