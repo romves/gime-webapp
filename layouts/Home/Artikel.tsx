@@ -9,7 +9,7 @@ const Artikel = () => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setActive((prevActive) => (prevActive + 1) % artikelData.length);
-    }, 5000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer);
@@ -17,7 +17,7 @@ const Artikel = () => {
   }, [active]);
 
   return (
-    <div className="py-24 space-y-16">
+    <div className="py-24 space-y-16 transition-all">
       <h2 className="px-16">Artikel Terbaru</h2>
       <div className="flex overflow-hidden border-y border-black">
         <div className="w-[200vh] flex">

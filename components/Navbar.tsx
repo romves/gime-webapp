@@ -18,7 +18,7 @@ const Navbar = () => {
 
       const currentScrollPos = window.scrollY;
 
-      const isScrollingDown = currentScrollPos > prevScrollPos;
+      const isScrollingDown = window.scrollY > window.innerHeight && currentScrollPos > prevScrollPos;
 
       setPrevScrollPos(currentScrollPos);
       setVisible(!isScrollingDown || currentScrollPos < 100);
@@ -34,9 +34,8 @@ const Navbar = () => {
     <nav
       className={`fixed w-screen ${
         scrolling ? "bg-white shadow-lg" : "bg-transparent"
-      } z-50 transition-all`}
-      style={{
-        transition: "transform 0.2s ease-in-out",
+      } z-50 transition-all duration-200`}
+      style={{ 
         transform: visible ? "translateY(0)" : "translateY(-100%)",
       }}
     >
