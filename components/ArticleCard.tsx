@@ -10,13 +10,13 @@ const ArticleCard = ({
   return (
     <div
       className={`cursor-pointer group transition-all duration-1000 border-l border-black ${
-        isActive ? "w-[40%]" : "w-[30%]"
+        isActive ? "lg:w-[40%]" : "lg:w-[30%]"
       } flex-shrink-0`}
     >
       <div
         className={`relative w-full ${
-          isActive ? "h-[35vh]" : "h-[30vh]"
-        } border flex items-center overflow-hidden transition-all`}
+          isActive ? "lg:h-[35vh]" : "lg:h-[30vh]"
+        } h-[35vh] border flex items-center overflow-hidden transition-all`}
       >
         <Image
           src={artikel.imageUrl}
@@ -26,9 +26,9 @@ const ArticleCard = ({
         />
       </div>
 
-      <div className="p-16 space-y-4 flex-1">
-        <h3>{artikel.title}</h3>
-        <p className="bodytext-2">{artikel.description}</p>
+      <div className="p-12 lg:p-16  space-y-4 flex-1">
+        <h3 className="h4 md:h3">{artikel.title}</h3>
+        <p className="bodytext-3 md:bodytext-2">{artikel.description}</p>
       </div>
     </div>
   );

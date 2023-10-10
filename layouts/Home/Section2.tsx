@@ -3,9 +3,9 @@ import React from "react";
 
 const Section2 = () => {
   return (
-    <section className="flex border border-black">
-      <div className="hidden md:flex relative flex-1">
-        {/* <Image src='/' alt='section2-img' /> */}
+    <section className="flex">
+      <div className="hidden md:flex relative flex-1 border">
+        <Image src='/images/robohand.svg' alt='section2-img' fill className="object-cover"/>
       </div>
       <div className="flex-1">
         <div className="bg-[#111111] text-[#FFF] px-[10%] py-28 space-y-10">
@@ -18,7 +18,7 @@ const Section2 = () => {
             terdepan dan inovatif bagi pasien, dokter, dan lembaga kesehatan.
           </p>
         </div>
-        <div className="flex justify-between items-center px-[10%] py-8 ">
+        <div className="flex justify-between items-center px-[10%] py-6 md:py-8 border-b md:border-b-0 border-black">
           <h2 className="h2">Our Vision</h2>
           <Image
             src="/icon/arrow-right-circle.svg"

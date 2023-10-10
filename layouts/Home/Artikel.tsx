@@ -17,10 +17,10 @@ const Artikel = () => {
   }, [active]);
 
   return (
-    <div className="py-24 space-y-16 transition-all">
-      <h2 className="px-16">Artikel Terbaru</h2>
-      <div className="flex overflow-hidden border-y border-black">
-        <div className="w-[200vh] flex">
+    <div className="pt-24 space-y-8 transition-all">
+      <h2 className="px-12 lg:px-16">Artikel Terbaru</h2>
+      <div className="flex overflow-hidden lg:border-y border-black">
+        <div className="lg:w-[200vh] flex flex-col">
           {artikelData.map((artikel, index) => (
             <ArticleCard
               key={artikel.id}

@@ -15,9 +15,9 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-screen bg-[#bdcdd6] opacity-40"/>
       <section className=" top-0 w-full h-full px-8 absolute">
         <div className="flex flex-col justify-center items-center w-full h-[100vh]">
-          <div className="flex flex-col items-center lg:w-[50%] text-center gap-12">
+          <div className="flex flex-col items-center lg:w-[50%] text-center gap-8 md:gap-12">
             <h1>Empowering Healthcare Professionals with AI</h1>
-            <p className="w-[65%]">
+            <p className=" md:w-[65%]">
               Dengan dukungan AI, kami bertujuan meningkatkan akurasi dan
               efisiensi deteksi diagnostik penyakit serta mempermudah dokter
               atau lembaga kesehatan.

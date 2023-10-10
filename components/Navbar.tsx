@@ -35,14 +35,21 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-screen ${
-        scrolling ? "bg-white shadow-lg" : "bg-transparent"
-      } z-50 transition-all duration-200`}
+        scrolling
+          ? `${isShownMobile ? "bg-black" : "bg-white"} shadow-l`
+          : `${isShownMobile ? "bg-black" : "bg-transparent"}`
+      } z-50 transition-all duration-300`}
       style={{
         transform: visible ? "translateY(0)" : "translateY(-100%)",
       }}
     >
       <div className="h6 px-8 lg:px-16 flex w-full h-[75px] lg:h-[100px] text-xl justify-between">
-        <Image src="/logo/Logo.svg" alt="logo" width={120} height={120} />
+        <Image
+          src={`/logo/${isShownMobile ? "Logo-white" : "Logo"}.svg`}
+          alt="logo"
+          width={120}
+          height={120}
+        />
 
         <div className="hidden lg:flex items-center gap-10">
           <ul className={`flex space-x-12 ${monserrat.className}`}>
@@ -61,9 +68,30 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center">
           <button
             className="cursor-pointer"
-            onClick={() => setIsShownMobile(true)}
+            onClick={() => setIsShownMobile(!isShownMobile)}
           >
-            <Image src="/icon/navicon.svg" alt="logo" width={35} height={35} />
+            {isShownMobile ? (
+              <div className="w-8 h-8 lg:hidden items-center cursor-pointer -mt-8">
+                <span
+                  className={`w-full h-[4px] bg-white inline-flex transform rotate-45 translate-y-3 transition-all ease-in-out duration-300 `}
+                ></span>
+                <span
+                  className={`w-full h-[4px] bg-white inline-flex transform -rotate-45 -translate-y-4 transition-all ease-in-out duration-300 `}
+                ></span>
+              </div>
+            ) : (
+              <div className="w-7 h-7 flex flex-col justify-between items-center lg:hidden text-4xl cursor-pointer overflow-hidden group">
+                <span
+                  className={`w-full h-[4px] bg-black inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300  `}
+                ></span>
+                <span
+                  className={`w-full h-[4px] bg-black inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 `}
+                ></span>
+                <span
+                  className={`w-full h-[4px] bg-black inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 `}
+                ></span>
+              </div>
+            )}
           </button>
         </div>
       </div>
@@ -71,23 +99,14 @@ const Navbar = () => {
       <div
         className={`${
           isShownMobile ? "absolute" : "hidden"
-        } w-full top-0 bg-black text-white`}
+        } w-full bg-black text-white`}
       >
         <ul>
-          <li className="flex justify-between px-8 py-4">
-            <Image
-              src="/logo/Logo-white.svg"
-              alt="logo"
-              width={120}
-              height={120}
-            />
-            <button onClick={() => setIsShownMobile(false)}>
-              <Image src="/icon/x.svg" alt="logo" width={25} height={25} />
-            </button>
-          </li>
-
           {navlinks.map((item, index) => (
-            <li key={index} className="border-t-[.1px] border-[#FFFFFF] px-12 py-4 text-center">
+            <li
+              key={index}
+              className="border-t-[.1px] border-[#FFFFFF] px-12 py-4 text-center"
+            >
               <Link href={item.url}>{item.title}</Link>
             </li>
           ))}

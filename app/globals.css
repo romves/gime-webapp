@@ -5,78 +5,81 @@
 .sect-container {
   @apply w-full px-12 lg:px-16 py-24;
 }
+@layer base {
+  h1,
+  .h1 {
+    /* font-size: 60px; */
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.25px;
 
-h1,
-.h1 {
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -1.25px;
-}
+    @apply text-[45px] md:text-[50px] lg:text-[60px];
+  }
 
-h2,
-.h2 {
-  font-size: 45px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -1.125px;
-}
-h3,
-.h3 {
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.75px;
-}
-h4,
-.h4 {
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.6px;
-}
+  h2,
+  .h2 {
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.125px;
+  }
+  h3,
+  .h3 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.75px;
+  }
+  h4,
+  .h4 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.6px;
+  }
 
-h5,
-.h5 {
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.6px;
-}
+  h5,
+  .h5 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.6px;
+  }
 
-h6,
-.h6 {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.4px;
-}
+  h6,
+  .h6 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.4px;
+  }
 
-.bodytext-1 {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.6px;
-}
-.bodytext-2 {
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.5px;
-}
-.bodytext-3 {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.4px;
+  .bodytext-1 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.6px;
+  }
+  .bodytext-2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.5px;
+  }
+  .bodytext-3 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.4px;
+  }
 }

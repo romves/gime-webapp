@@ -2,13 +2,19 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="sect-container">
+    <footer
+      className="sect-container"
+      style={{
+        backgroundImage: "url(/images/footerbg.svg)",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="flex w-full">
         <div className="flex-1 space-y-6">
           <h4>Join our mailing for update</h4>
           <p className="bodytext-2 text-black/70">
-            Receive latest updates from Gime about <br /> new products, special offers
-            and events
+            Receive latest updates from Gime about <br /> new products, special
+            offers and events
           </p>
           {/* <input type="email" /> */}
         </div>
