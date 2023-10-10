@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .sect-container {
-  @apply w-full px-12 md:px-16 py-24;
+  @apply w-full px-12 lg:px-16 py-24;
 }
 
 h1,
