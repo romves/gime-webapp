@@ -20,7 +20,7 @@ const Artikel = () => {
     <div className="pt-24 space-y-8 transition-all">
       <h2 className="px-12 lg:px-16">Artikel Terbaru</h2>
       <div className="flex overflow-hidden lg:border-y border-black">
-        <div className="lg:w-[200vh] flex flex-col">
+        <div className="lg:w-[200vh] flex flex-col lg:flex-row">
           {artikelData.map((artikel, index) => (
             <ArticleCard
               key={artikel.id}
