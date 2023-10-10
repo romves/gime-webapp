@@ -4,11 +4,11 @@ import React from "react";
 const Section2 = () => {
   return (
     <section className="flex border border-black">
-      <div className="relative flex-1">
+      <div className="hidden md:flex relative flex-1">
         {/* <Image src='/' alt='section2-img' /> */}
       </div>
       <div className="flex-1">
-        <div className="bg-[#111111] text-[#FFF] px-24 py-28 space-y-10">
+        <div className="bg-[#111111] text-[#FFF] px-[10%] py-28 space-y-10">
           <h2>
             We are committed to changing the way the world views healthcare
           </h2>
@@ -18,7 +18,7 @@ const Section2 = () => {
             terdepan dan inovatif bagi pasien, dokter, dan lembaga kesehatan.
           </p>
         </div>
-        <div className="flex justify-between items-center px-[12%] py-8 ">
+        <div className="flex justify-between items-center px-[10%] py-8 ">
           <h2 className="h2">Our Vision</h2>
           <Image
             src="/icon/arrow-right-circle.svg"

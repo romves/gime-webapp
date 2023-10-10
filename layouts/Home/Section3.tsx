@@ -4,7 +4,7 @@ import React from "react";
 const Section3 = () => {
   return (
     <div className="flex flex-col items-center sect-container gap-10">
-      <h2>Alasan Memilih Kami untuk Masa Depan</h2>
+      <h2 className="text-center">Alasan Memilih Kami untuk Masa Depan</h2>
       <div className="flex gap-12 py-12">
         <ul className="flex-1 space-y-6">
           <li className="space-y-4">
@@ -30,7 +30,7 @@ const Section3 = () => {
           </li>
         </ul>
         <div
-          className="relative flex-1 overflow-hidden rounded-3xl"
+          className="hidden md:block relative flex-1 overflow-hidden rounded-3xl"
           style={{
             backgroundImage: "url(/images/robot.svg)",
             backgroundPosition: "center",

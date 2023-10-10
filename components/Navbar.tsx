@@ -18,7 +18,8 @@ const Navbar = () => {
 
       const currentScrollPos = window.scrollY;
 
-      const isScrollingDown = window.scrollY > window.innerHeight && currentScrollPos > prevScrollPos;
+      const isScrollingDown =
+        window.scrollY > window.innerHeight && currentScrollPos > prevScrollPos;
 
       setPrevScrollPos(currentScrollPos);
       setVisible(!isScrollingDown || currentScrollPos < 100);
@@ -35,14 +36,14 @@ const Navbar = () => {
       className={`fixed w-screen ${
         scrolling ? "bg-white shadow-lg" : "bg-transparent"
       } z-50 transition-all duration-200`}
-      style={{ 
+      style={{
         transform: visible ? "translateY(0)" : "translateY(-100%)",
       }}
     >
-      <div className="h6 px-16 flex w-full h-[100px] text-xl justify-between">
-        <Image src="/logo/Logo.svg" alt="logo" width={180} height={180} />
+      <div className="h6 px-8 md:px-16 flex w-full h-[100px] text-xl justify-between">
+        <Image src="/logo/Logo.svg" alt="logo" width={120} height={120} />
 
-        <div className="flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-10">
           <ul className={`flex space-x-12 ${monserrat.className}`}>
             <li>
               <Link href="/">Home</Link>
@@ -60,6 +61,12 @@ const Navbar = () => {
 
           <button className="bg-black text-white px-8 py-4 rounded-2xl">
             Sign in
+          </button>
+        </div>
+
+        <div className="flex lg:hidden items-center">
+          <button className="cursor-pointer">
+            <Image src="/icon/navicon.svg" alt="logo" width={35} height={35} />
           </button>
         </div>
       </div>
