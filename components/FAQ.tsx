@@ -9,8 +9,8 @@ const FAQ = () => {
 
   return (
     <div className="flex flex-col items-center sect-container bg-url()">
-      <div className="w-[40%] space-y-4">
-        <h2 className="text-center">
+      <div className="lg:w-[40%] space-y-4">
+        <h2 className="h3 lg:h2 text-center">
           Helping you create positive lasting impact
         </h2>
         <div className="space-y-2">
@@ -22,7 +22,7 @@ const FAQ = () => {
                 className={`cursor-pointer text-start bg-white w-full border p-4 rounded-xl space-y-4 transition-all`}
               >
                 <div className="flex gap-16 items-center">
-                  <span className="h3">{items.question}</span>
+                  <span className="h4 lg:h3">{items.question}</span>
                   {isActive == items.id ? (
                     <BsArrowDownCircle className="rotate-180 text-2xl flex-shrink-0 mr-2" />
                   ) : (
@@ -30,7 +30,7 @@ const FAQ = () => {
                   )}
                 </div>
                 <p
-                  className={`bodytext-2 ${
+                  className={`lg:bodytext-2 ${
                     isActive == items.id ? "block" : "hidden"
                   }`}
                 >
