@@ -43,13 +43,15 @@ const Navbar = () => {
         transform: visible ? "translateY(0)" : "translateY(-100%)",
       }}
     >
-      <div className="h6 px-8 lg:px-16 flex w-full h-[75px] lg:h-[100px] text-xl justify-between">
-        <Image
-          src={`/logo/${isShownMobile ? "Logo-white" : "Logo"}.svg`}
-          alt="logo"
-          width={120}
-          height={120}
-        />
+      <div className="h6 px-8 lg:px-16 flex w-full h-[75px] lg:h-[100px] text-xl justify-between items-center">
+        <Link href="/">
+          <Image
+            src={`/logo/${isShownMobile ? "Logo-white" : "Logo"}.svg`}
+            alt="logo"
+            width={120}
+            height={120}
+          />
+        </Link>
 
         <div className="hidden lg:flex items-center gap-10">
           <ul className={`flex space-x-12 ${monserrat.className}`}>
@@ -105,7 +107,7 @@ const Navbar = () => {
           {navlinks.map((item, index) => (
             <li
               key={index}
-              className="border-t-[.1px] border-[#FFFFFF] px-12 py-4 text-center"
+              className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
             >
               <Link href={item.url}>{item.title}</Link>
             </li>
@@ -125,14 +127,14 @@ const navlinks = [
   },
   {
     title: "About",
-    url: "/",
+    url: "/about",
   },
   {
     title: "Product",
-    url: "/",
+    url: "/our-product",
   },
   {
     title: "Contact",
-    url: "/",
+    url: "/contact",
   },
 ];

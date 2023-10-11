@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="flex w-full">
         <div className="flex-1 space-y-6">
-          <h4>Join our mailing for update</h4>
+          <h4 className="font-[500]">Join our mailing for update</h4>
           <p className="bodytext-2 text-black/70">
             Receive latest updates from Gime about <br /> new products, special
             offers and events

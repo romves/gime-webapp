@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.sect-container {
-  @apply w-full px-12 lg:px-16 py-24;
-}
+
 @layer base {
+  .sect-container {
+    @apply w-full px-10 lg:px-16 py-24;
+  }
+  
   h1,
   .h1 {
     /* font-size: 60px; */
