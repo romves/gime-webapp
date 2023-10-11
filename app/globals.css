@@ -63,7 +63,6 @@
   }
 
   .bodytext-1 {
-    color: rgba(255, 255, 255, 0.7);
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -83,5 +82,12 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.4px;
+  }
+  .bodytext-3 {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.3px;
   }
 }

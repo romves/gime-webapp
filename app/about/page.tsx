@@ -1,12 +1,14 @@
-import Landing from '@/layouts/About/Landing'
-import React from 'react'
+import Landing from "@/layouts/About/Landing";
+import Value from "@/layouts/About/Value";
+import React from "react";
 
 const page = () => {
   return (
     <>
-    <Landing />
+      <Landing />
+      <Value />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

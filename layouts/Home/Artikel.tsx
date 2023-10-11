@@ -1,6 +1,6 @@
 "use client";
 
-import ArticleCard from "@/components/ArticleCard";
+import ArticleCard from "@/components/ui/ArticleCard";
 import React from "react";
 
 const Artikel = () => {

@@ -22,7 +22,7 @@ const Section2 = () => {
           <h2 className="h2">Our Vision</h2>
           <Image
             src="/icon/arrow-right-circle.svg"
-            alt="link-arrow-button"
+            alt="link--button"
             width={65}
             height={65}
           />

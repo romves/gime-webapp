@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Montserrat } from "next/font/google";
+import { HamburgerButton, HamburgerCloseButton } from "./ui/HamburgerButton";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ const Navbar = () => {
 
       setPrevScrollPos(currentScrollPos);
       setVisible(!isScrollingDown || currentScrollPos < 100);
+      setIsShownMobile(false)
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -72,28 +74,7 @@ const Navbar = () => {
             className="cursor-pointer"
             onClick={() => setIsShownMobile(!isShownMobile)}
           >
-            {isShownMobile ? (
-              <div className="w-8 h-8 lg:hidden items-center cursor-pointer -mt-8">
-                <span
-                  className={`w-full h-[3px] bg-white inline-flex transform rotate-45 translate-y-3 transition-all ease-in-out duration-300 `}
-                ></span>
-                <span
-                  className={`w-full h-[3px] bg-white inline-flex transform -rotate-45 -translate-y-4 transition-all ease-in-out duration-300 `}
-                ></span>
-              </div>
-            ) : (
-              <div className="w-7 h-7 flex flex-col justify-between items-center lg:hidden text-4xl cursor-pointer overflow-hidden group">
-                <span
-                  className={`w-full h-[4px] bg-black inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300  `}
-                ></span>
-                <span
-                  className={`w-full h-[4px] bg-black inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 `}
-                ></span>
-                <span
-                  className={`w-full h-[4px] bg-black inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 `}
-                ></span>
-              </div>
-            )}
+            {isShownMobile ? <HamburgerCloseButton /> : <HamburgerButton />}
           </button>
         </div>
       </div>
@@ -105,12 +86,31 @@ const Navbar = () => {
       >
         <ul>
           {navlinks.map((item, index) => (
-            <li
-              key={index}
-              className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
-            >
-              <Link href={item.url}>{item.title}</Link>
-            </li>
+            <>
+              {item.title !== "Product" ? (
+                <li
+                  key={index}
+                  className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
+                >
+                  <Link href={item.url}>{item.title}</Link>
+                </li>
+              ) : (
+                item.children &&
+                item.children.url &&
+                item.children.url.length > 0 && (
+                  <ul>
+                    {item.children.url.map((child, childIndex) => (
+                      <li
+                        key={childIndex}
+                        className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
+                      >
+                        <Link href={child.url}>{child.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )
+              )}
+            </>
           ))}
         </ul>
       </div>
@@ -131,7 +131,19 @@ const navlinks = [
   },
   {
     title: "Product",
-    url: "/our-product",
+    url: "/",
+    children: {
+      url: [
+        {
+          title: "AI Assistant",
+          url: "/our-product/assistant",
+        },
+        {
+          title: "AI Diagnostic",
+          url: "/our-product/diagnostic",
+        },
+      ],
+    },
   },
   {
     title: "Contact",
