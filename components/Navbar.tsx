@@ -136,11 +136,11 @@ const navlinks = [
       url: [
         {
           title: "AI Assistant",
-          url: "/our-product/assistant",
+          url: "/product/assistant",
         },
         {
           title: "AI Diagnostic",
-          url: "/our-product/diagnostic",
+          url: "/product/diagnostic",
         },
       ],
     },
