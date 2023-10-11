@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
 
+import { BsShieldLock, BsPeople, BsLightbulb } from "react-icons/bs";
+import { LiaHandshake } from "react-icons/lia";
+
 const Value = () => {
   return (
     <div className="bg-black text-[#FFF]">
@@ -16,13 +19,14 @@ const Value = () => {
 
         <div className="lg:grid lg:grid-cols-2 flex-1">
           <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
-            <Image
+            {/* <Image
               src="/icon/loader.svg"
               alt="layanan-icon"
               width={40}
               height={40}
               className=" self-start"
-            />
+            /> */}
+            <BsShieldLock className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Integritas</h2>
               <p className="text-white/70">
@@ -33,13 +37,14 @@ const Value = () => {
             </div>
           </div>
           <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
-            <Image
+            {/* <Image
               src="/icon/loader.svg"
               alt="layanan-icon"
               width={40}
               height={40}
               className=" self-start"
-            />
+            /> */}
+            <BsPeople className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Kolaborasi</h2>
               <p className="text-white/70">
@@ -50,13 +55,14 @@ const Value = () => {
             </div>
           </div>
           <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
-            <Image
+            {/* <Image
               src="/icon/cpu.svg"
               alt="layanan-icon"
               width={40}
               height={40}
               className=" self-start"
-            />
+            /> */}
+            <BsLightbulb className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Inovasi</h2>
               <p className="text-white/70">
@@ -68,13 +74,14 @@ const Value = () => {
             </div>
           </div>
           <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
-            <Image
+            {/* <Image
               src="/icon/cpu.svg"
               alt="layanan-icon"
               width={40}
               height={40}
               className=" self-start"
-            />
+            /> */}
+            <LiaHandshake className="text-white lg:mt-2 text-[50px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Pelayanan</h2>
               <p className="text-white/70">
