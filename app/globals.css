@@ -5,7 +5,7 @@
 
 @layer base {
   .sect-container {
-    @apply w-full px-10 lg:px-16 py-24;
+    @apply w-full px-6 lg:px-16 py-24;
   }
   
   h1,

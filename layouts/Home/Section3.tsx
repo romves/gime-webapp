@@ -6,7 +6,7 @@ const Section3 = () => {
     <div className="flex flex-col items-center sect-container gap-6 md:gap-10">
       <h2 className="text-center">Alasan Memilih Kami untuk Masa Depan</h2>
       <div className="flex gap-12 py-12">
-        <ul className="flex-1 space-y-6">
+        <ul className="flex-1 space-y-6 px-4">
           <li className="space-y-4">
             <h3>Solusi yang telah disesuaikan</h3>
             <p>

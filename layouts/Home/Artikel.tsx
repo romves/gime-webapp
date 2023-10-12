@@ -6,20 +6,20 @@ import React from "react";
 const Artikel = () => {
   const [active, setActive] = React.useState(0);
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setActive((prevActive) => (prevActive + 1) % artikelData.length);
-    }, 6000);
+  // React.useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setActive((prevActive) => (prevActive + 1) % artikelData.length);
+  //   }, 6000);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [active]);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [active]);
 
   return (
     <div className="pt-24 space-y-8 transition-all">
-      <h2 className="px-12 lg:px-16">Artikel Terbaru</h2>
-      <div className="flex overflow-hidden lg:border-y border-black">
+      <h2 className="px-6 lg:px-16">Artikel Terbaru</h2>
+      <div className="flex overflow-hidden  border-black ">
         <div className="lg:w-[200vh] flex flex-col lg:flex-row">
           {artikelData.map((artikel, index) => (
             <ArticleCard

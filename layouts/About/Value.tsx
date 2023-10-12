@@ -7,10 +7,10 @@ import { LiaHandshake } from "react-icons/lia";
 const Value = () => {
   return (
     <div className="bg-black text-[#FFF]">
-      <h2 className="px-12 py-8 md:p-16 border-b">Our Value</h2>
+      <h2 className="px-6 py-8 md:p-16 border-b">Our Value</h2>
       <div className="lg:flex border-b">
         <div className="flex-[.5] border-b lg:border-b-0">
-          <p className="text-white/70 px-12 md:px-16 py-8">
+          <p className="text-white/70 px-6 md:px-16 py-8">
             Mengedepankan peran dalam pembentukan perusahaan kami. Mereka adalah
             pusat keberhasilan perusahaan ini, dan semangat kami tercermin dalam
             nilai-nilai.
@@ -18,7 +18,7 @@ const Value = () => {
         </div>
 
         <div className="lg:grid lg:grid-cols-2 flex-1">
-          <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
+          <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
             {/* <Image
               src="/icon/loader.svg"
               alt="layanan-icon"
@@ -36,7 +36,7 @@ const Value = () => {
               </p>
             </div>
           </div>
-          <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
+          <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
             {/* <Image
               src="/icon/loader.svg"
               alt="layanan-icon"
@@ -54,14 +54,7 @@ const Value = () => {
               </p>
             </div>
           </div>
-          <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
-            {/* <Image
-              src="/icon/cpu.svg"
-              alt="layanan-icon"
-              width={40}
-              height={40}
-              className=" self-start"
-            /> */}
+          <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
             <BsLightbulb className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Inovasi</h2>
@@ -73,14 +66,7 @@ const Value = () => {
               </p>
             </div>
           </div>
-          <div className="flex lg:border-l gap-4 md:gap-10 px-12 md:px-16 py-8 border-b">
-            {/* <Image
-              src="/icon/cpu.svg"
-              alt="layanan-icon"
-              width={40}
-              height={40}
-              className=" self-start"
-            /> */}
+          <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
             <LiaHandshake className="text-white lg:mt-2 text-[50px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Pelayanan</h2>
@@ -98,3 +84,4 @@ const Value = () => {
 };
 
 export default Value;
+

@@ -13,7 +13,7 @@ const Hero = () => {
         <source src="./videos/1.mp4" type="video/mp4" />
       </video>
       <div className="absolute top-0 left-0 w-full h-screen bg-[#bdcdd6] opacity-40"/>
-      <section className=" top-0 w-full h-full px-8 absolute">
+      <section className=" top-0 w-full h-full px-6 absolute">
         <div className="flex flex-col justify-center items-center w-full h-[100vh]">
           <div className="flex flex-col items-center lg:w-[50%] text-center gap-8 md:gap-12">
             <h1>Empowering Healthcare Professionals with AI</h1>

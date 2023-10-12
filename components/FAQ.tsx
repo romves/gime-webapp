@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
 import { BsArrowDownCircle } from "react-icons/bs";
 
@@ -8,57 +7,42 @@ const FAQ = () => {
   const [isActive, setIsActive] = React.useState(1);
 
   return (
-    <div className="flex flex-col items-center sect-container bg-url()">
-      <div className="lg:w-[40%] space-y-4">
-        <h2 className="h3 lg:h2 text-center">
-          Helping you create positive lasting impact
-        </h2>
-        <div className="space-y-2">
-          {faqData.map((items) => (
-            <>
-              <button
-                key={items.id}
-                onClick={() => setIsActive(items.id)}
-                className={`cursor-pointer text-start bg-white w-full border p-4 rounded-xl space-y-4 transition-all`}
-              >
-                <div className="flex gap-16 items-center">
-                  <span className="h4 lg:h3">{items.question}</span>
-                  {isActive == items.id ? (
-                    <BsArrowDownCircle className="rotate-180 text-2xl flex-shrink-0 mr-2" />
-                  ) : (
-                    <BsArrowDownCircle className="text-2xl flex-shrink-0 mr-2" />
-                  )}
-                </div>
-                <p
-                  className={`lg:bodytext-2 ${
-                    isActive == items.id ? "block" : "hidden"
-                  }`}
+    <section className="sect-container">
+      <div className="py-10 px-4 md:px-10 flex flex-col items-center rounded-xl bg-[url(/images/faq-bg.png)] bg-cover">
+        <div className="lg:w-[40%] space-y-8">
+          <h2 className="h3 lg:h2 text-center">
+            Helping you create positive lasting impact
+          </h2>
+          <div className="space-y-2">
+            {faqData.map((items) => (
+              <>
+                <button
+                  key={items.id}
+                  onClick={() => setIsActive(isActive == items.id ? -1 : items.id)}
+                  className={`cursor-pointer text-start bg-white w-full border p-4 rounded-xl space-y-4 transition-all`}
                 >
-                  {items.answer}
-                </p>
-              </button>
-              {/* <div
-                key={items.id}
-                className={`${
-                  isActive == items.id ? "flex" : "hidden"
-                } justify-between items-center w-full border bg-white p-4 rounded-xl gap-16`}
-              >
-                <span className="bodytext-3 lg:bodytext-1 font-[500]">
-                  {items.answer}
-                </span>
-                <Image
-                  src="/icon/arrow-down.svg"
-                  alt="icon"
-                  height={30}
-                  width={30}
-                  className="mr-2 rotate-180"
-                />
-              </div> */}
-            </>
-          ))}
+                  <div className="flex gap-4 md:gap-16 items-center justify-between">
+                    <span className="h5 lg:h4">{items.question}</span>
+                    {isActive == items.id ? (
+                      <BsArrowDownCircle className="rotate-180 text-2xl flex-shrink-0 mr-2" />
+                    ) : (
+                      <BsArrowDownCircle className="text-2xl flex-shrink-0 mr-2" />
+                    )}
+                  </div>
+                  <p
+                    className={`bodytext-3 lg:bodytext-2 ${
+                      isActive == items.id ? "block" : "hidden"
+                    }`}
+                  >
+                    {items.answer}
+                  </p>
+                </button>
+              </>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
