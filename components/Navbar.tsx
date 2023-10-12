@@ -66,7 +66,7 @@ const Navbar = () => {
             {navlinks.map((item, index) => (
               <div key={index}>
                 {item.title !== "Product" ? (
-                  <li key={index}>
+                  <li>
                     <Link
                       href={item.url}
                       className={`${
@@ -133,7 +133,35 @@ const Navbar = () => {
           isShownMobile ? "absolute" : "hidden"
         } w-full bg-black text-white`}
       >
-        <ul></ul>
+        <ul>
+          {navlinks.map((item, index) => (
+            <div key={index}>
+              {item.title !== "Product" ? (
+                <li
+                  key={index}
+                  className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
+                >
+                  <Link href={item.url}>{item.title}</Link>
+                </li>
+              ) : (
+                item.children &&
+                item.children.url &&
+                item.children.url.length > 0 && (
+                  <ul>
+                    {item.children.url.map((child, childIndex) => (
+                      <li
+                        key={childIndex}
+                        className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
+                      >
+                        <Link href={child.url}>{child.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )
+              )}
+            </div>
+          ))}
+        </ul>
       </div>
     </nav>
   );
