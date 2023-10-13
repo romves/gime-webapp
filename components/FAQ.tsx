@@ -25,9 +25,8 @@ const FAQ = ({ variant }: { variant: string }) => {
           </h2>
           <div className="space-y-2">
             {faqData.map((items) => (
-              <>
+              <React.Fragment key={items.id}>
                 <button
-                  key={items.id}
                   onClick={() =>
                     setIsActive(isActive == items.id ? -1 : items.id)
                   }
@@ -49,7 +48,7 @@ const FAQ = ({ variant }: { variant: string }) => {
                     {items.answer}
                   </p>
                 </button>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>

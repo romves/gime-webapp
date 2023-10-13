@@ -60,9 +60,9 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden lg:flex items-center gap-10">
-          <ul className={`flex space-x-12 ${monserrat.className}`}>
+          <div className={`flex space-x-12 ${monserrat.className}`}>
             {navlinks.map((item, index) => (
-              <div key={index}>
+              <ul key={index}>
                 {item.title !== "Product" ? (
                   <li>
                     <Link
@@ -114,13 +114,16 @@ const Navbar = () => {
                     </div>
                   )
                 )}
-              </div>
+              </ul>
             ))}
-          </ul>
+          </div>
 
-          <button className="bg-black text-white px-8 py-4 rounded-2xl">
+          <Link
+            href="/?showDialog=y"
+            className="bg-black text-white px-8 py-4 rounded-2xl"
+          >
             Sign in
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Nav */}
@@ -159,50 +162,47 @@ const Navbar = () => {
       <div
         className={`${
           isShownMobile ? "absolute" : "hidden"
-        } w-full bg-black text-white flex flex-col`}
+        } w-full bg-black text-white flex flex-col z-50`}
       >
-        <ul>
-          {navlinks.map((item, index) => (
-            <div key={index}>
-              {item.title !== "Product" ? (
-                <li
-                  key={index}
-                  className="px-12 py-4 text-center"
+        {navlinks.map((item, index) => (
+          <ul key={index}>
+            {item.title !== "Product" ? (
+              <li key={index} className="px-12 py-4 text-center">
+                <Link
+                  href={item.url}
+                  onClick={() => setIsShownMobile(!isShownMobile)}
                 >
-                  <Link
-                    href={item.url}
-                    onClick={() => setIsShownMobile(!isShownMobile)}
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ) : (
-                item.children &&
-                item.children.url &&
-                item.children.url.length > 0 && (
-                  <ul>
-                    {item.children.url.map((child, childIndex) => (
-                      <li
-                        key={childIndex}
-                        className=" px-12 py-4 text-center"
+                  {item.title}
+                </Link>
+              </li>
+            ) : (
+              item.children &&
+              item.children.url &&
+              item.children.url.length > 0 && (
+                <ul>
+                  {item.children.url.map((child, childIndex) => (
+                    <li key={childIndex} className=" px-12 py-4 text-center">
+                      <Link
+                        href={child.url}
+                        onClick={() => setIsShownMobile(!isShownMobile)}
                       >
-                        <Link
-                          href={child.url}
-                          onClick={() => setIsShownMobile(!isShownMobile)}
-                        >
-                          {child.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )
-              )}
-            </div>
-          ))}
-        </ul>
-        <button className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4">
+                        {child.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )
+            )}
+          </ul>
+        ))}
+
+        <Link
+          href="/?showDialog=y"
+          onClick={() => setIsDropdown(!isDropdown)}
+          className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4"
+        >
           Sign in
-        </button>
+        </Link>
       </div>
     </nav>
   );

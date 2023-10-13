@@ -13,7 +13,7 @@ const Hero = () => {
       >
         <source src="./videos/1.mp4" type="video/mp4" />
       </video>
-      <div className="hidden md:flex absolute  z-50 bottom-[10vh] w-full justify-center">
+      <div className="hidden md:flex absolute z-40 bottom-[10vh] w-full justify-center">
         <button className="animate-bounce">
           <Image
             src="/icon/scroll.svg"
