@@ -46,7 +46,7 @@ const Navbar = () => {
         scrolling
           ? `${isShownMobile ? "bg-black" : "bg-white"} shadow-l`
           : `${isShownMobile ? "bg-black" : "bg-transparent"}`
-      } z-50 transition-all duration-300`}
+      } z-50 transition-all duration-300 drop-shadow-md`}
       style={{
         transform: visible ? "translateY(0)" : "translateY(-100%)",
       }}
@@ -72,6 +72,7 @@ const Navbar = () => {
                       className={`${
                         pathname === item.url ? "text-black" : "text-black/50"
                       }`}
+                      onClick={() => setIsDropdown(false)}
                     >
                       {item.title}
                     </Link>

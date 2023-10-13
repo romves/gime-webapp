@@ -1,5 +1,5 @@
-import Landing from "@/layouts/About/Landing";
-import Value from "@/layouts/About/Value";
+import Landing from "@/components/layouts/About/Landing";
+import Value from "@/components/layouts/About/Value";
 import React from "react";
 
 const page = () => {

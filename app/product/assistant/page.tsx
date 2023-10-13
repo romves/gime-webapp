@@ -1,5 +1,5 @@
 import FAQ from '@/components/FAQ'
-import Value from '@/layouts/About/Value'
+import Value from '@/components/layouts/About/Value'
 import React from 'react'
 
 const page = () => {
