@@ -83,7 +83,7 @@ const Navbar = () => {
                     <div className="relative">
                       <button
                         className={`${
-                          pathname === item.url ? "text-black" : "text-black/50"
+                          /^\/product\/.*$/.test(pathname) ? "text-black" : "text-black/50"
                         } flex items-center gap-2`}
                         onClick={() => setIsDropdown(!isDropdown)}
                       >
@@ -101,7 +101,7 @@ const Navbar = () => {
                       >
                         {item.children.url.map((child, childIndex) => (
                           <li key={childIndex}>
-                            <Link href={child.url}>{child.title}</Link>
+                            <Link href={child.url} onClick={() => setIsDropdown(!isDropdown)}>{child.title}</Link>
                           </li>
                         ))}
                       </ul>
@@ -120,6 +120,7 @@ const Navbar = () => {
         {/* Mobile Nav */}
         <div className="flex lg:hidden items-center">
           <button
+            aria-label="navmenu-button"
             className="cursor-pointer"
             onClick={() => setIsShownMobile(!isShownMobile)}
           >
@@ -141,7 +142,7 @@ const Navbar = () => {
                   key={index}
                   className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
                 >
-                  <Link href={item.url}>{item.title}</Link>
+                  <Link href={item.url} onClick={() => setIsShownMobile(!isShownMobile)}>{item.title}</Link>
                 </li>
               ) : (
                 item.children &&
@@ -153,7 +154,7 @@ const Navbar = () => {
                         key={childIndex}
                         className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
                       >
-                        <Link href={child.url}>{child.title}</Link>
+                        <Link href={child.url} onClick={() => setIsShownMobile(!isShownMobile)}>{child.title}</Link>
                       </li>
                     ))}
                   </ul>
@@ -180,7 +181,7 @@ const navlinks = [
   },
   {
     title: "Product",
-    url: "",
+    url: "^/product/[^/]+",
     children: {
       url: [
         {
