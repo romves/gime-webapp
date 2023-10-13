@@ -27,11 +27,11 @@ const TextInput = (props: Props) => {
       />
       <label
         htmlFor={id}
-        className={`absolute left-0 top-1  ${
+        className={`absolute left-0  ${
           inputValue
-            ? "text-[12px] md:text-base -top-4 text-black"
-            : " md:text-[20px] text-black/50 cursor-text  transition-all "
-        } peer-focus:text-[12px] md:peer-focus:text-base peer-focus:-top-4 peer-focus:text-black  font-[500]`}
+            ? "text-[12px] md:text-base -top-4 lg:-top-5 text-black"
+            : " md:text-[20px] text-black/50 cursor-text"
+        } peer-focus:text-[12px] md:peer-focus:text-base peer-focus:-top-4 lg:peer-focus:-top-5 peer-focus:text-black  font-[500] transition-all`}
       >
         {label}
       </label>
