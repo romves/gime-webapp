@@ -10,7 +10,7 @@ const Dialog = ({}: Props) => {
 
   const dialogRef = React.useRef<null | HTMLDialogElement>(null);
   const showDialog = searchParams.get("showDialog");
-  console.log(showDialog);
+
   const router = useRouter();
 
   useEffect(() => {

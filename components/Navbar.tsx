@@ -119,7 +119,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            href="/?showDialog=y"
+            href={`/?showDialog=y`}
             className="bg-black text-white px-8 py-4 rounded-2xl"
           >
             Sign in
@@ -197,8 +197,10 @@ const Navbar = () => {
         ))}
 
         <Link
-          href="/?showDialog=y"
-          onClick={() => setIsDropdown(!isDropdown)}
+          href={`/?showDialog=y`}
+          onClick={() => {
+            setIsShownMobile(false);
+          }}
           className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4"
         >
           Sign in
