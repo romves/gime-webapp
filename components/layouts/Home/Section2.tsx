@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Section2 = () => {
@@ -18,7 +19,7 @@ const Section2 = () => {
             terdepan dan inovatif bagi pasien, dokter, dan lembaga kesehatan.
           </p>
         </div>
-        <div className="flex justify-between items-center px-[8%] py-6 md:py-8 border-b md:border-b-0 border-black">
+        <Link href="/about" className="flex justify-between items-center px-[8%] py-6 md:py-8 border-b md:border-b-0 border-black">
           <h2 className="h2">Our Vision</h2>
           <Image
             src="/icon/arrow-right-circle.svg"
@@ -26,7 +27,7 @@ const Section2 = () => {
             width={65}
             height={65}
           />
-        </div>
+        </Link>
       </div>
     </section>
   );

@@ -3,14 +3,24 @@
 import React from "react";
 import { BsArrowDownCircle } from "react-icons/bs";
 
-const FAQ = () => {
+const FAQ = ({ variant }: { variant: string }) => {
   const [isActive, setIsActive] = React.useState(1);
 
   return (
     <section className="sect-container">
-      <div className="py-10 px-4 md:px-10 flex flex-col items-center rounded-xl bg-[url(/images/faq-bg.png)] bg-cover">
+      <div
+        className={`py-10 px-4 md:px-10 flex flex-col items-center rounded-xl ${
+          variant === "dark"
+            ? "bg-[url(/images/faq-bg-dark.png)]"
+            : "bg-[url(/images/faq-bg.png)]"
+        } bg-cover`}
+      >
         <div className="lg:w-[40%] space-y-8">
-          <h2 className="h3 lg:h2 text-center">
+          <h2
+            className={`h3 lg:h2 text-center ${
+              variant === "dark" ? "text-white" : "text-black"
+            }`}
+          >
             Helping you create positive lasting impact
           </h2>
           <div className="space-y-2">
@@ -18,7 +28,9 @@ const FAQ = () => {
               <>
                 <button
                   key={items.id}
-                  onClick={() => setIsActive(isActive == items.id ? -1 : items.id)}
+                  onClick={() =>
+                    setIsActive(isActive == items.id ? -1 : items.id)
+                  }
                   className={`cursor-pointer text-start bg-white w-full border p-4 rounded-xl space-y-4 transition-all`}
                 >
                   <div className="flex gap-4 md:gap-16 items-center justify-between">

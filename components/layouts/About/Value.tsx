@@ -19,13 +19,7 @@ const Value = () => {
 
         <div className="lg:grid lg:grid-cols-2 flex-1">
           <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
-            {/* <Image
-              src="/icon/loader.svg"
-              alt="layanan-icon"
-              width={40}
-              height={40}
-              className=" self-start"
-            /> */}
+
             <BsShieldLock className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Integritas</h2>
@@ -37,13 +31,7 @@ const Value = () => {
             </div>
           </div>
           <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
-            {/* <Image
-              src="/icon/loader.svg"
-              alt="layanan-icon"
-              width={40}
-              height={40}
-              className=" self-start"
-            /> */}
+
             <BsPeople className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
               <h2 className="h3 lg:h2">Kolaborasi</h2>

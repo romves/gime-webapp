@@ -5,8 +5,6 @@ import Link from "next/link";
 import React from "react";
 import { Montserrat } from "next/font/google";
 import { usePathname } from "next/navigation";
-
-import { HamburgerButton, HamburgerCloseButton } from "./ui/HamburgerButton";
 import { BsArrowDownCircle } from "react-icons/bs";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
@@ -84,7 +82,9 @@ const Navbar = () => {
                     <div className="relative">
                       <button
                         className={`${
-                          /^\/product\/.*$/.test(pathname) ? "text-black" : "text-black/50"
+                          /^\/product\/.*$/.test(pathname)
+                            ? "text-black"
+                            : "text-black/50"
                         } flex items-center gap-2`}
                         onClick={() => setIsDropdown(!isDropdown)}
                       >
@@ -102,7 +102,12 @@ const Navbar = () => {
                       >
                         {item.children.url.map((child, childIndex) => (
                           <li key={childIndex}>
-                            <Link href={child.url} onClick={() => setIsDropdown(!isDropdown)}>{child.title}</Link>
+                            <Link
+                              href={child.url}
+                              onClick={() => setIsDropdown(!isDropdown)}
+                            >
+                              {child.title}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -125,7 +130,28 @@ const Navbar = () => {
             className="cursor-pointer"
             onClick={() => setIsShownMobile(!isShownMobile)}
           >
-            {isShownMobile ? <HamburgerCloseButton /> : <HamburgerButton />}
+            {isShownMobile ? (
+              <div className="w-8 h-8 lg:hidden items-center cursor-pointer -mt-8">
+                <span
+                  className={`w-full h-[3px] bg-white inline-flex transform rotate-45 translate-y-3 transition-all ease-in-out duration-300 `}
+                ></span>
+                <span
+                  className={`w-full h-[3px] bg-white inline-flex transform -rotate-45 -translate-y-4 transition-all ease-in-out duration-300 `}
+                ></span>
+              </div>
+            ) : (
+              <div className="w-7 h-7 flex flex-col justify-between items-center lg:hidden text-4xl cursor-pointer overflow-hidden group">
+                <span
+                  className={`w-full h-[4px] bg-black inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300  `}
+                ></span>
+                <span
+                  className={`w-full h-[4px] bg-black inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 `}
+                ></span>
+                <span
+                  className={`w-full h-[4px] bg-black inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 `}
+                ></span>
+              </div>
+            )}
           </button>
         </div>
       </div>
@@ -133,7 +159,7 @@ const Navbar = () => {
       <div
         className={`${
           isShownMobile ? "absolute" : "hidden"
-        } w-full bg-black text-white`}
+        } w-full bg-black text-white flex flex-col`}
       >
         <ul>
           {navlinks.map((item, index) => (
@@ -141,9 +167,14 @@ const Navbar = () => {
               {item.title !== "Product" ? (
                 <li
                   key={index}
-                  className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
+                  className="px-12 py-4 text-center"
                 >
-                  <Link href={item.url} onClick={() => setIsShownMobile(!isShownMobile)}>{item.title}</Link>
+                  <Link
+                    href={item.url}
+                    onClick={() => setIsShownMobile(!isShownMobile)}
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ) : (
                 item.children &&
@@ -153,9 +184,14 @@ const Navbar = () => {
                     {item.children.url.map((child, childIndex) => (
                       <li
                         key={childIndex}
-                        className="border-t-[.1px] border-[#ffffff51] px-12 py-4 text-center"
+                        className=" px-12 py-4 text-center"
                       >
-                        <Link href={child.url} onClick={() => setIsShownMobile(!isShownMobile)}>{child.title}</Link>
+                        <Link
+                          href={child.url}
+                          onClick={() => setIsShownMobile(!isShownMobile)}
+                        >
+                          {child.title}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -164,6 +200,9 @@ const Navbar = () => {
             </div>
           ))}
         </ul>
+        <button className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4">
+          Sign in
+        </button>
       </div>
     </nav>
   );
