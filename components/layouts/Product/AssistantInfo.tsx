@@ -6,7 +6,7 @@ import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 const AssistantInfo = () => {
   return (
-    <div className="bg-black text-[#FFF]">
+    <div className="bg-black text-[#FFF] z-40">
       <h2 className="px-6 py-8 md:p-16 border-b">AI Assistant</h2>
       <div className="lg:flex border-b">
         <div className="flex-[.5] border-b lg:border-b-0">
