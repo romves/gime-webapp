@@ -19,7 +19,7 @@ const Section2 = () => {
             terdepan dan inovatif bagi pasien, dokter, dan lembaga kesehatan.
           </p>
         </div>
-        <Link href="/about" className="flex justify-between items-center px-[8%] py-6 md:py-8 border-b md:border-b-0 border-black">
+        <Link href="/about" className="flex justify-between items-center px-[8%] py-6  border-b md:border-b-0 border-black">
           <h3 className="h3">Our Vision</h3>
           <Image
             src="/icon/arrow-right-circle.svg"

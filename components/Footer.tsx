@@ -9,7 +9,7 @@ const Footer = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="flex w-full">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-8 w-full">
         <div className="flex-1 space-y-6">
           <h3 className="h4 font-[500]">Join our mailing for update</h3>
           <p className="bodytext-2 text-black/70">
