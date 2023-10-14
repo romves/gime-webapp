@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Montserrat } from "next/font/google";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BsArrowDownCircle } from "react-icons/bs";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
@@ -17,6 +17,8 @@ const Navbar = () => {
   const [isDropdown, setIsDropdown] = React.useState(false);
 
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  // console.log(searchParams.has("showDialog"))
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -119,7 +121,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            href={`/?showDialog=y`}
+            href={`?showDialog=y&type=signin`}
             className="bg-black text-white px-8 py-4 rounded-2xl"
           >
             Sign in
@@ -197,9 +199,10 @@ const Navbar = () => {
         ))}
 
         <Link
-          href={`/?showDialog=y`}
+          href={`?showDialog=y&type=signin`}
           onClick={() => {
             setIsShownMobile(false);
+            
           }}
           className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4"
         >
@@ -242,3 +245,7 @@ const navlinks = [
     url: "/contact",
   },
 ];
+
+const MobileNav = ({ setIsShownMobile, isShownMobile }: any) => {
+  return <></>;
+};

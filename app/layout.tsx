@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 
 import Footer from "@/components/Footer";
-
+import Dialog from "@/components/ui/Dialog";
+import Head from "next/head";
 
 const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
 
@@ -20,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
       <body className={instrumentSans.className}>
+        <Dialog />
         <Navbar />
         {children}
         <Footer />
