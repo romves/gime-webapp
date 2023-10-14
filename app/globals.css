@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/font/CabinetGrotesk-Extrabold.ttf');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,5 +92,20 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.3px;
+  }
+
+  .font-grotesk{
+    font-family: 'Cabinet Grotesk';
+  }
+
+  .text-stroke {
+    -webkit-text-stroke-width: 1px; /* Width of the stroke */
+    -webkit-text-stroke-color: black;
+
+    @media only screen and (min-width: 768px) {
+      -webkit-text-stroke-width: 2.5px;
+    }
+    
+    @apply text-transparent
   }
 }

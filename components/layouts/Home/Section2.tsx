@@ -20,12 +20,12 @@ const Section2 = () => {
           </p>
         </div>
         <Link href="/about" className="flex justify-between items-center px-[8%] py-6 md:py-8 border-b md:border-b-0 border-black">
-          <h2 className="h2">Our Vision</h2>
+          <h3 className="h3">Our Vision</h3>
           <Image
             src="/icon/arrow-right-circle.svg"
             alt="link--button"
-            width={65}
-            height={65}
+            width={55}
+            height={55}
           />
         </Link>
       </div>
