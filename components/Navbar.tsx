@@ -79,7 +79,7 @@ const Navbar = () => {
                   item.children &&
                   item.children.url &&
                   item.children.url.length > 0 && (
-                    <div className="relative">
+                    <li className="relative">
                       <button
                         className={`${
                           /^\/product\/.*$/.test(pathname)
@@ -111,7 +111,7 @@ const Navbar = () => {
                           </li>
                         ))}
                       </ul>
-                    </div>
+                    </li>
                   )
                 )}
               </ul>
