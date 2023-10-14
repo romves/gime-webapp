@@ -18,7 +18,7 @@ const AssistantInfo = () => {
           </p>
         </div>
 
-        <div className="lg:grid lg:grid-cols-2 flex-1">
+        <div className="grid xl:grid-cols-2 flex-1">
           <div className="flex lg:border-l gap-4 md:gap-10 px-6 md:px-16 py-8 border-b">
             <MdOutlineAdminPanelSettings className="text-white lg:mt-2 text-[40px] flex-shrink-0" />
             <div className="space-y-4">
