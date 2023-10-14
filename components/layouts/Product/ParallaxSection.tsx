@@ -60,7 +60,7 @@ const ParallaxSection = () => {
           className="absolute inset-0 z-20 bottom-0 flex justify-center"
         >
           <Image
-            src="/images/assistant.png"
+            src="/images/Assistant.png"
             alt="assistant-product"
             width={700}
             height={700}
