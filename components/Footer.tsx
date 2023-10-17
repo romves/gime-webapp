@@ -18,7 +18,7 @@ const Footer = () => {
             Receive latest updates from Gime about <br /> new products, special
             offers and events
           </p>
-          <TextInput  label="Email" id="email"/>
+          <TextInput  label="Email" id="-subscription"/>
         </div>
 
         <div className="flex md:justify-center flex-[.6]  ">
