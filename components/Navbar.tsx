@@ -241,12 +241,10 @@ const navlinks = [
 
 const SignInButton = () => {
   const { data: session } = useSession();
-
+  
   if (session && session.user) {
-    return <button onClick={() => signOut()}>SignOut</button>;
-  }
-
-  return (
+    return <button onClick={() => signOut()}>{session.user.uname} SignOut</button>;
+  } else return (
     <Link
       href={`?showDialog=y&type=signin`}
       className="bg-black text-white px-8 py-4 rounded-2xl"
@@ -254,4 +252,6 @@ const SignInButton = () => {
       Sign in
     </Link>
   );
+
+  
 };
