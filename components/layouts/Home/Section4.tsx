@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 
@@ -57,7 +58,7 @@ const Section4 = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-12 py-8 px-6 md:px-16 justify-between md:justify-start">
+        <Link href="/product/assistant" className="flex items-center gap-12 py-8 px-6 md:px-16 justify-between md:justify-start">
           <h3 className="h4">Pelajari Lebih Lanjut </h3>
           <Image
             src="/icon/arrow-right-circle-white.svg"
@@ -65,7 +66,7 @@ const Section4 = () => {
             width={45}
             height={45}
           />
-        </div>
+        </Link>
       </div>
     </>
   );

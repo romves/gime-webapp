@@ -2,6 +2,8 @@
 
 import React, { useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
+
 import SignUp from "../layouts/auth/SignUp";
 import SignIn from "../layouts/auth/SignIn";
 
@@ -13,7 +15,9 @@ const Dialog = ({}: Props) => {
   const dialogRef = React.useRef<null | HTMLDialogElement>(null);
   const showDialog = searchParams.get("showDialog");
   const type = searchParams.get("type");
-  const pathname = usePathname()
+  const pathname = usePathname();
+
+  const { data: session } = useSession();
 
   const router = useRouter();
 

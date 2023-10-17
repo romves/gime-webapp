@@ -5,6 +5,7 @@ import { Instrument_Sans } from "next/font/google";
 
 import Footer from "@/components/Footer";
 import Dialog from "@/components/ui/Dialog";
+import Providers from "@/components/Providers";
 
 const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
 
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={instrumentSans.className}>
-        <Dialog />
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Dialog />
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

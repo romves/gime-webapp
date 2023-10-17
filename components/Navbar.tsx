@@ -1,10 +1,11 @@
 "use client";
 
+import { signOut, useSession } from "next-auth/react";
+import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
-import { Montserrat } from "next/font/google";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BsArrowDownCircle } from "react-icons/bs";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
@@ -17,8 +18,6 @@ const Navbar = () => {
   const [isDropdown, setIsDropdown] = React.useState(false);
 
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  // console.log(searchParams.has("showDialog"))
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -120,12 +119,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <Link
-            href={`?showDialog=y&type=signin`}
-            className="bg-black text-white px-8 py-4 rounded-2xl"
-          >
-            Sign in
-          </Link>
+          <SignInButton />
         </div>
 
         {/* Mobile Nav */}
@@ -202,7 +196,6 @@ const Navbar = () => {
           href={`?showDialog=y&type=signin`}
           onClick={() => {
             setIsShownMobile(false);
-            
           }}
           className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4"
         >
@@ -246,6 +239,19 @@ const navlinks = [
   },
 ];
 
-const MobileNav = ({ setIsShownMobile, isShownMobile }: any) => {
-  return <></>;
+const SignInButton = () => {
+  const { data: session } = useSession();
+
+  if (session && session.user) {
+    return <button onClick={() => signOut()}>SignOut</button>;
+  }
+
+  return (
+    <Link
+      href={`?showDialog=y&type=signin`}
+      className="bg-black text-white px-8 py-4 rounded-2xl"
+    >
+      Sign in
+    </Link>
+  );
 };

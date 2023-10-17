@@ -1,3 +1,4 @@
+import ScrollButton from "@/components/ui/ScrollButton";
 import Image from "next/image";
 import React from "react";
 
@@ -14,14 +15,7 @@ const Hero = () => {
         <source src="./videos/1.mp4" type="video/mp4" />
       </video>
       <div className="hidden md:flex absolute z-40 bottom-[10vh] w-full justify-center">
-        <button className="animate-bounce">
-          <Image
-            src="/icon/scroll.svg"
-            alt="scroll-button"
-            width={40}
-            height={40}
-          />
-        </button>
+        <ScrollButton />
       </div>
       <div className="absolute top-0 left-0 w-full h-screen bg-[#bdcdd6] opacity-40" />
       <section className=" top-0 w-full h-full px-6 absolute">

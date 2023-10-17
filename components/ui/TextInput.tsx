@@ -16,11 +16,11 @@ const TextInput = (props: Props) => {
   };
 
   return (
-    <div className="relative mt-8">
+    <div className="relative mt-8 ">
       <input
         id={id}
         type={type}
-        className={`${className} w-full focus:outline-none border-b border-black/50 py-1 focus:border-black transition-colors peer text-[16px] md:text-[24px]`}
+        className={`${className} bg-transparent w-full focus:outline-none border-b border-black/50 py-1 focus:border-black transition-colors peer text-[16px] md:text-[24px]`}
         {...rest}
         value={inputValue}
         onChange={handleInputChange}
