@@ -1,7 +1,4 @@
-/* eslint-disable no-use-before-define */
-
 import { NextAuthOptions } from "next-auth";
-import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
@@ -74,7 +71,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
-const handler = NextAuth(authOptions);
-
-export { handler as GET, handler as POST };
