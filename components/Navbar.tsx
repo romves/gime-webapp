@@ -1,12 +1,12 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { BsArrowDownCircle } from "react-icons/bs";
+import { SignInButtonDesktop, SignInButtonMobile } from "./ui/SignInButton";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
 
@@ -26,7 +26,8 @@ const Navbar = () => {
       const currentScrollPos = window.scrollY;
 
       const isScrollingDown =
-        window.scrollY > window.innerHeight && currentScrollPos > prevScrollPos;
+        window.scrollY > window.innerHeight / 2 &&
+        currentScrollPos > prevScrollPos;
 
       setPrevScrollPos(currentScrollPos);
       setVisible(!isScrollingDown || currentScrollPos < 100);
@@ -119,7 +120,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <SignInButton />
+          <SignInButtonDesktop />
         </div>
 
         {/* Mobile Nav */}
@@ -192,15 +193,7 @@ const Navbar = () => {
           </ul>
         ))}
 
-        <Link
-          href={`?showDialog=y&type=signin`}
-          onClick={() => {
-            setIsShownMobile(false);
-          }}
-          className="self-center bg-white text-black font-[500] px-16 py-2 rounded-xl my-4"
-        >
-          Sign in
-        </Link>
+        <SignInButtonMobile setIsShownMobile={setIsShownMobile} />
       </div>
     </nav>
   );
@@ -238,20 +231,3 @@ const navlinks = [
     url: "/contact",
   },
 ];
-
-const SignInButton = () => {
-  const { data: session } = useSession();
-  
-  if (session && session.user) {
-    return <button onClick={() => signOut()}>{session.user.uname} SignOut</button>;
-  } else return (
-    <Link
-      href={`?showDialog=y&type=signin`}
-      className="bg-black text-white px-8 py-4 rounded-2xl"
-    >
-      Sign in
-    </Link>
-  );
-
-  
-};

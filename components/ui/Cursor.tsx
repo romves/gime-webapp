@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const Cursor = () => {
   const [position, setPosition] = React.useState({ x: 0, y: 0 });
-  console.log(position);
   React.useEffect(() => {
     const mouseMove = (e: any) => {
       setPosition({ x: e.pageX, y: e.pageY });

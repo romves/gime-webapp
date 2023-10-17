@@ -6,7 +6,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        uname: {
+        email: {
           label: "email",
           uname: "email",
         },
@@ -16,14 +16,14 @@ export const authOptions: NextAuthOptions = {
         },
       },
       async authorize(credentials) {
-        if (!credentials?.uname || !credentials?.password) {
+        if (!credentials?.email || !credentials?.password) {
           return null;
         }
 
-        const { uname, password } = credentials;
+        const { email, password } = credentials;
         const formData = new FormData();
 
-        formData.append("uname", uname);
+        formData.append("email", email);
         formData.append("pass", password);
 
         const tokenRes = await fetch(
@@ -33,6 +33,11 @@ export const authOptions: NextAuthOptions = {
             body: formData,
           }
         );
+
+        if (!tokenRes.ok) {
+          const errorData = await tokenRes.json();
+          throw new Error(JSON.stringify(errorData.message));
+        }
 
         const tokenData = await tokenRes.json();
 
@@ -45,6 +50,8 @@ export const authOptions: NextAuthOptions = {
             },
           }
         );
+
+        
 
         const userData = await userRes.json();
 
