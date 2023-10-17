@@ -1,19 +1,21 @@
-import FAQ from '@/components/FAQ'
-import DiagnosticInfo from '@/components/layouts/Product/DiagnosticInfo'
-import React from 'react'
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
+import BookAssistant from "@/components/layouts/Product/BookAssistant";
+import DiagnosticInfo from "@/components/layouts/Product/DiagnosticInfo";
+import ParallaxSection from "@/components/layouts/Product/ParallaxSection";
 
 const page = () => {
   return (
     <>
-      <div className="px-1 py-24 lg:py-32 font-grotesk text-[16vw] w-full justify-center flex flex-col items-center leading-[.9]">
-        <span className="text-stroke">AI Diagnostic</span>
-        <span>AI Diagnostic</span>
-        <span className="text-stroke">AI Diagnostic</span>
+      <ParallaxSection variant="Diagnostic"/>
+      <div className="absolute z-30">
+        <DiagnosticInfo />
+        <FAQ variant="primary" />
+        <BookAssistant variant="Diagnostic"/>
+        <Footer />
       </div>
-      <DiagnosticInfo />
-      <FAQ variant='dark'/>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

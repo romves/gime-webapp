@@ -64,13 +64,13 @@ const faqData = [
     id: 1,
     question: "Apakah produk kesehatan ini memerlukan perawatan?",
     answer:
-      "Produk asisten kesehatan kami dirancang untuk meminimalkan perawatan dan pemeliharaan. Namun, kami merekomendasikan perawatan rutin dan pemeliharaan sesuai dengan panduan",
+      "Produk asisten kesehatan kami dirancang untuk meminimalkan perawatan dan pemeliharaan. Namun, kami merekomendasikan perawatan rutin dan pemeliharaan sesuai dengan panduan.",
   },
   {
     id: 2,
     question: "Bagaimana cara memesan produk kesehatan ini?",
     answer:
-      'Untuk memesan produk asisten kesehatan kami, silakan kunjungi halaman "Kontak" pada website kami. Anda dapat mengisi formulir kontak dengan detail Anda, atau menghubungi tim layanan pelanggan.',
+      'Untuk memesan produk asisten kesehatan kami, silakan login terlebih dahulu. Anda dapat mengisi formulir kontak dengan detail Anda, pada page produk di website kami atau menghubungi tim layanan pelanggan.',
   },
   {
     id: 3,
@@ -88,6 +88,6 @@ const faqData = [
     id: 5,
     question: "Bagaimana saya dapat menghubungi tim dukungan pelanggan",
     answer:
-      'Tim dukungan pelanggan kami selalu siap membantu Anda. Anda dapat menghubungi mereka melalui Nomor Telepon atau Alamat Email yang tercantum pada halaman "Kontak" di website kami',
+      'Tim dukungan pelanggan kami selalu siap membantu Anda. Anda dapat menghubungi mereka melalui Nomor Telepon atau Alamat Email yang tercantum pada halaman "Kontak" di website kami.',
   },
 ];

@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="relative">
       <video
         className="object-cover w-full h-screen"
-        autoPlay={true}
+        autoPlay
         loop
         controls={false}
         muted

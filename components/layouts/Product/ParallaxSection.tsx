@@ -5,7 +5,11 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 
-const ParallaxSection = () => {
+export interface PropsVariant {
+  variant: "Assistant" | "Diagnostic";
+}
+
+const ParallaxSection = ({ variant }: PropsVariant) => {
   const ref = useRef<null | any>(null);
   const { scrollYProgress } = useScroll({
     target: ref.current,
@@ -19,11 +23,11 @@ const ParallaxSection = () => {
     <>
       <div
         ref={ref}
-        className="relative px-1 py-24 lg:py-32 font-grotesk text-[17vw] w-full justify-center flex flex-col items-center leading-[.9] z-20"
+        className="relative px-1 py-24 lg:py-32 font-grotesk text-[16vw] w-full justify-center flex flex-col items-center leading-[.9] z-20"
       >
-        <div className="text-stroke z-20">AI Assistant</div>
-        <motion.div>AI Assistant</motion.div>
-        <div className="text-stroke z-20">AI Assistant</div>
+        <div className="text-stroke z-20">AI {variant}</div>
+        <motion.div>AI {variant}</motion.div>
+        <div className="text-stroke z-20">AI {variant}</div>
 
         <motion.div
           style={{ y: layer2 }}
@@ -59,13 +63,23 @@ const ParallaxSection = () => {
           }}
           className="absolute inset-0 z-20 bottom-0 flex justify-center"
         >
-          <Image
-            src="/images/Assistant.png"
-            alt="assistant-product"
-            width={700}
-            height={700}
-            className="absolute bottom-0 w-[60%] md:w-[45%] "
-          />
+          {variant === "Assistant" ? (
+            <Image
+              src="/images/Assistant.png"
+              alt="assistant-product"
+              width={700}
+              height={700}
+              className="absolute bottom-0 w-[60%] md:w-[45%] "
+            />
+          ) : (
+            <Image
+              src="/images/Diagnostic.png"
+              alt="assistant-product"
+              width={700}
+              height={700}
+              className="absolute -bottom-10 w-[60%] md:w-[45%] "
+            />
+          )}
         </motion.div>
       </div>
     </>
