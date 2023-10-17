@@ -2,6 +2,9 @@ import Link from "next/link";
 import React from "react";
 import { signIn } from "next-auth/react";
 import { MdClose } from "react-icons/md";
+import { CgSpinner } from "react-icons/cg";
+import { useForm } from "react-hook-form";
+import type { FieldValues } from "react-hook-form";
 
 interface Props {
   clickOk: () => void;
@@ -9,13 +12,15 @@ interface Props {
 }
 
 const SignIn = ({ clickOk, closeDialog }: Props) => {
-  const [data, setData] = React.useState({
-    email: "",
-    password: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    getValues,
+  } = useForm();
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = async (data: FieldValues) => {
     try {
       const res = await signIn("credentials", {
         email: data.email,
@@ -24,45 +29,69 @@ const SignIn = ({ clickOk, closeDialog }: Props) => {
       });
 
       if (res?.status == 200) {
+        alert("Signin Success")
         closeDialog();
       }
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      console.log(error)
     }
+    reset()
   };
+
   return (
     <>
       <div className="flex justify-between items-center">
         <h1 className="h4">Sign In</h1>
-        <button onClick={closeDialog}><MdClose /></button>
+        <button onClick={closeDialog}>
+          <MdClose />
+        </button>
       </div>
-      <form onSubmit={onSubmit}>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-1">
             <label className="h6">Email</label>
             <input
-              value={data.email}
-              onChange={(e) => setData({ ...data, email: e.target.value })}
+              {...register("email", { required: "Email is required" })}
               type="text"
               placeholder="user@gimeai.com"
               className="border rounded-xl border-black py-2 px-4"
             />
+            {errors.email && (
+              <p className="text-red-500">{`${errors.email.message}`}</p>
+            )}
           </div>
           <div className="flex flex-col gap-1">
             <label className="h6">Password</label>
             <input
-              value={data.password}
-              onChange={(e) => setData({ ...data, password: e.target.value })}
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              })}
               type="password"
               placeholder="password"
               className="border rounded-xl border-black py-2 px-4"
             />
+            {errors.password && (
+              <p className="text-red-500">{`${errors.password.message}`}</p>
+            )}
           </div>
           <a href="s" className="self-end">
             forgot password
           </a>
-          <button type="submit" className="bg-black text-white rounded-xl py-3">
-            Sign in
+          <button
+            disabled={isSubmitting}
+            type="submit"
+            className="flex justify-center items-center bg-black text-white rounded-xl py-3"
+          >
+            {isSubmitting ? (
+              <CgSpinner className="text-2xl animate-spin" />
+            ) : (
+              "Sign in"
+            )}
           </button>
           <Link
             href="?showDialog=y&type=signup"
