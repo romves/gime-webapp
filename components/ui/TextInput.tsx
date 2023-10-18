@@ -16,6 +16,7 @@ const TextInput = forwardRef(function TextInput(props: Props, ref: any) {
       <input
         ref={ref}
         id={id}
+        name={id}
         type={type}
         className={`${className} bg-transparent w-full focus:outline-none border-b border-black/50 pt-1 focus:border-black transition-colors peer text-[16px] md:text-[24px]`}
         {...rest}

@@ -1,9 +1,53 @@
+"use client";
+
 import TextInput from "@/components/ui/TextInput";
 import Image from "next/image";
 import React from "react";
 import { BsInbox, BsTelephone } from "react-icons/bs";
+import { useForm } from "react-hook-form";
+import type { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
+import { CgSpinner } from "react-icons/cg";
 
 const Landing = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    getValues,
+    reset,
+  } = useForm();
+
+  const onSubmit = async (data: FieldValues) => {
+    console.log(data.name, data.country, data.email, data.phone, data.message);
+    const formData = new FormData();
+
+    formData.append("name", data.name);
+    formData.append("country", data.country);
+    formData.append("email", data.email);
+    formData.append("phone", data.phone);
+    formData.append("message", data.message);
+
+    const response = await fetch(
+      "https://formsubmit.co/ajax/6af632c7e125bc1eece3243585f9a529",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    if (response.ok) {
+      toast("Form has been submitted!");
+    } else {
+      toast("Form submission failed");
+    }
+    // reset()
+  };
+
   return (
     <>
       <div className="px-6 xl:pr-0 lg:pl-16 pt-24 space-y-4">
@@ -26,24 +70,57 @@ const Landing = () => {
               </span>
             </div>
 
-            <div className="flex flex-col lg:gap-10">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col lg:gap-10"
+            >
               <div className="grid lg:grid-cols-2 gap-x-28">
                 {/* Send Email */}
-                <TextInput type="email" label="Email" id="email" />
-                <TextInput type="text" label="Name" id="name" />
-                <TextInput type="tel" label="Phone" id="phone" />
-                <TextInput type="text" label="Country" id="country" />
+                <TextInput
+                  {...register("email", { required: "Email is required" })}
+                  type="email"
+                  label="Email"
+                  id="email"
+                />
+                <TextInput
+                  {...register("name", { required: "Name is required" })}
+                  type="text"
+                  label="Name"
+                  id="name"
+                />
+
+                <TextInput
+                  {...register("phone", { required: "Phone is required" })}
+                  type="tel"
+                  label="Phone"
+                  id="phone"
+                />
+                <TextInput
+                  {...register("country", { required: "Country is required" })}
+                  type="text"
+                  label="Country"
+                  id="country"
+                />
               </div>
               <TextInput
+                {...register("message")}
                 type="text"
                 label="Message"
                 id="message"
                 className="w-full"
               />
-              <button className="mt-12 lg:mt-4 self-end bg-black hover:bg-neutral-800 text-white  px-8 py-4 rounded-2xl font-[500] transition-colors">
-                Submit
+              <button
+                disabled={isSubmitting}
+                type="submit"
+                className="mt-12 lg:mt-4 self-end bg-black hover:bg-neutral-800 text-white  px-8 py-4 rounded-2xl font-[500] transition-colors"
+              >
+                {isSubmitting ? (
+                  <CgSpinner className="text-2xl animate-spin" />
+                ) : (
+                  "Submit"
+                )}
               </button>
-            </div>
+            </form>
           </div>
 
           <div className="hidden lg:block relative flex-[.8] w-full rounded-l-xl overflow-hidden">

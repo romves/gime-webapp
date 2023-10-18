@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 import { CgSpinner } from "react-icons/cg";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 interface Props {
   clickOk: () => void;
@@ -43,9 +43,9 @@ const SignUp = ({ clickOk, closeDialog }: Props) => {
 
       const data = await response.json();
       if (data.status === "success") {
-        toast("Signup success")
+        toast("Signup success");
         router.push("?showDialog=y&type=signin");
-      } 
+      }
     } catch (error) {
       console.error("An error occurred:", error);
     }
@@ -146,6 +146,7 @@ const SignUp = ({ clickOk, closeDialog }: Props) => {
             )}
           </div>
           <button
+            disabled={isSubmitting}
             type="submit"
             className="flex items-center justify-center bg-black hover:bg-neutral-800 text-white rounded-xl py-3 mt-2 transition-colors"
           >
