@@ -8,7 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const TextInput = forwardRef(function TextInput(props: Props, ref: any) {
-  const { label, id, type, className, ...rest } = props;
+  const { label, id, type, className, value, ...rest } = props;
   const [inputValue, setInputValue] = React.useState("x");
 
   return (

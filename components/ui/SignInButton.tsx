@@ -40,7 +40,7 @@ const SignInButtonDesktop = () => {
           }}
           className={`${
             isDropdown ? "flex" : "hidden"
-          } items-center gap-2 absolute bg-white px-8 py-4 rounded-b-2xl w-full`}
+          } items-center gap-2 absolute bg-white  px-8 py-4 rounded-b-2xl w-full`}
         >
           <MdLogout /> Sign Out
         </button>
@@ -50,7 +50,7 @@ const SignInButtonDesktop = () => {
     return (
       <Link
         href={`?showDialog=y&type=signin`}
-        className="bg-black text-white px-8 py-4 rounded-2xl"
+        className="bg-black text-white hover:bg-neutral-800 px-8 py-4 rounded-2xl transition-colors"
       >
         Sign in
       </Link>

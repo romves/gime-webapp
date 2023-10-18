@@ -73,7 +73,7 @@ const ForgotPass = ({ closeDialog }: Props) => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="flex justify-center items-center bg-black text-white rounded-xl py-3"
+            className="flex justify-center items-center bg-black hover:bg-neutral-800 text-white rounded-xl py-3 transition-colors"
           >
             {isSubmitting ? (
               <CgSpinner className="text-2xl animate-spin" />
@@ -83,7 +83,7 @@ const ForgotPass = ({ closeDialog }: Props) => {
           </button>
           <Link
             href="?showDialog=y&type=verifycode"
-            className="bg-[#EDEDED] text-black rounded-xl py-3 text-center"
+            className="bg-[#EDEDED] hover:bg-neutral-200 transition-colors text-black rounded-xl py-3 text-center"
           >
             Already have the code?
           </Link>

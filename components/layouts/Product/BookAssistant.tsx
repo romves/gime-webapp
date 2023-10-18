@@ -16,6 +16,7 @@ const BookAssistant = ({ variant }: PropsVariant) => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    getValues,
     reset,
   } = useForm();
 
@@ -54,7 +55,6 @@ const BookAssistant = ({ variant }: PropsVariant) => {
         toast("Book Success, Please check your email!");
       }
 
-      console.log(data);
     } catch (error) {
       console.error("An error occurred:", error);
     }

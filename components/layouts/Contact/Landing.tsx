@@ -40,7 +40,7 @@ const Landing = () => {
                 id="message"
                 className="w-full"
               />
-              <button className="mt-12 lg:mt-4 self-end bg-black text-white px-8 py-4 rounded-2xl font-[500]">
+              <button className="mt-12 lg:mt-4 self-end bg-black hover:bg-neutral-800 text-white  px-8 py-4 rounded-2xl font-[500] transition-colors">
                 Submit
               </button>
             </div>

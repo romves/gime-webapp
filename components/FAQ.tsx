@@ -9,13 +9,13 @@ const FAQ = ({ variant }: { variant: string }) => {
   return (
     <section className="sect-container">
       <div
-        className={`py-10 px-4 md:px-10 flex flex-col items-center rounded-xl ${
+        className={`transition-all py-10 px-4 md:px-10 flex flex-col items-center rounded-xl ${
           variant === "dark"
             ? "bg-[url(/images/faq-bg-dark.png)]"
             : "bg-[url(/images/faq-bg.png)]"
         } bg-cover`}
       >
-        <div className="lg:w-[40%] space-y-8">
+        <div className="lg:w-[40%] space-y-8 ">
           <h2
             className={`h3 lg:h2 text-center ${
               variant === "dark" ? "text-white" : "text-black"

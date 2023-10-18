@@ -58,7 +58,7 @@ const Section4 = () => {
           </div>
         </div>
 
-        <Link href="/product/assistant" className="flex items-center gap-12 py-8 px-6 md:px-16 justify-between md:justify-start">
+        <Link href="/product/assistant" className="flex hover:bg-neutral-800 items-center gap-12 py-8 px-6 md:px-16 justify-between md:justify-start transition-colors">
           <h3 className="h4">Pelajari Lebih Lanjut </h3>
           <Image
             src="/icon/arrow-right-circle-white.svg"

@@ -147,7 +147,7 @@ const SignUp = ({ clickOk, closeDialog }: Props) => {
           </div>
           <button
             type="submit"
-            className="flex items-center justify-center bg-black text-white rounded-xl py-3 mt-2"
+            className="flex items-center justify-center bg-black hover:bg-neutral-800 text-white rounded-xl py-3 mt-2 transition-colors"
           >
             {isSubmitting ? (
               <CgSpinner className="text-2xl animate-spin" />
@@ -157,7 +157,7 @@ const SignUp = ({ clickOk, closeDialog }: Props) => {
           </button>
           <Link
             href="?showDialog=y&type=signin"
-            className="bg-[#EDEDED] text-black rounded-xl py-3 text-center"
+            className="bg-[#EDEDED] hover:bg-neutral-200 transition-colors text-black rounded-xl py-3 text-center"
           >
             Already have account?
           </Link>
