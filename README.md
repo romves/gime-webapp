@@ -22,13 +22,13 @@ https://gime-webapp.vercel.app/
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/romves/gime-webapp.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd gime-webapp
 ```
 
 Install dependencies
