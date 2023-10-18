@@ -37,12 +37,12 @@ const ChangePass = ({ closeDialog }: Props) => {
         }
       );
         const response = await res.json()
-      if (response.status !== 'success') {
+      if (response.status === 'success') {
         alert("Your password has been changed");
         router.push('?showDialog=y&type=signin')
         reset();
       }
-      
+
     } catch (error: any) {
       console.log(error);
     }

@@ -32,9 +32,10 @@ const ForgotPass = ({ closeDialog }: Props) => {
         }
       );
 
-      if (res?.status == 200) {
+      const response = await res.json()
+      if (response.status === "success") {
         alert("Check your email");
-        // closeDialog();
+        closeDialog();
       }
     } catch (error: any) {
       console.log(error);
