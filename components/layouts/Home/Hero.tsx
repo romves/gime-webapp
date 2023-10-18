@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="flex flex-col justify-center items-center w-full h-[100vh]">
           <div className="flex flex-col items-center lg:w-[50%] text-center gap-8 md:gap-12">
             <h1>Empowering Healthcare Professionals with AI</h1>
-            <p className=" md:w-[65%]">
+            <p className=" md:w-[65%] text-base md:text">
               Dengan dukungan AI, kami bertujuan meningkatkan akurasi dan
               efisiensi deteksi diagnostik penyakit serta mempermudah dokter
               atau lembaga kesehatan.

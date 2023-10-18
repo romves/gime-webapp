@@ -77,7 +77,7 @@ const ParallaxSection = ({ variant }: PropsVariant) => {
               alt="assistant-product"
               width={700}
               height={700}
-              className="absolute -bottom-10 w-[60%] md:w-[45%] "
+              className="absolute -bottom-10 w-[60%] md:w-[30%] "
             />
           )}
         </motion.div>

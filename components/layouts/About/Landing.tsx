@@ -25,7 +25,7 @@ const Landing = () => {
       </div>
 
       <div className="flex justify-end pt-0 pb-24 px-6">
-        <p className="lg:w-[50vw] bodytext-4 lg:bodytext-1">
+        <p className="lg:w-[50vw] bodytext-4 lg:bodytext-2">
           <strong>GIME</strong>, sebuah perintis dalam dunia AI Healthcare dan
           Robotika Kesehatan. Didirikan pada tahun 2023, kami telah mengukir
           jejak yang kuat dalam pengembangan teknologi AI yang canggih untuk

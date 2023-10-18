@@ -27,8 +27,8 @@ const ArticleCard = ({
       </div>
 
       <div className="p-6 pb-12 lg:p-16  space-y-4 flex-1">
-        <h3 className="h4 md:h3">{artikel.title}</h3>
-        <p className="bodytext-3 md:bodytext-2">{artikel.description}</p>
+        <h2 className="h3">{artikel.title}</h2>
+        <p className="">{artikel.description}</p>
       </div>
     </div>
   );
