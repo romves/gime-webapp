@@ -7,6 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "GIME | Diagnostic",
+  description: "Ai Health Assistant and Diagnostic Solutions"
 };
 
 const page = () => {

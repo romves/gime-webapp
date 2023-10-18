@@ -5,6 +5,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "GIME | About",
+  description: "Ai Health Assistant and Diagnostic Solutions"
 };
 
 const page = () => {

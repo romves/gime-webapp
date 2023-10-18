@@ -8,6 +8,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "GIME | Assistant",
+  description: "Ai Health Assistant and Diagnostic Solutions"
 };
 
 const page = () => {
