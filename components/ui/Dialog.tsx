@@ -6,6 +6,8 @@ import { signOut, useSession } from "next-auth/react";
 
 import SignUp from "../layouts/auth/SignUp";
 import SignIn from "../layouts/auth/SignIn";
+import ForgotPass from "../layouts/auth/ForgotPass";
+import ChangePass from "../layouts/auth/ChangePass";
 
 interface Props {}
 
@@ -46,9 +48,13 @@ const Dialog = ({}: Props) => {
       >
         {type === "signin" ? (
           <SignIn closeDialog={closeDialog} clickOk={clickOk} />
-        ) : (
+        ) : type === "signup" ? (
           <SignUp closeDialog={closeDialog} clickOk={clickOk} />
-        )}
+        ) : type === "forgotpass" ? (
+          <ForgotPass closeDialog={closeDialog} />
+        ) : type === "verifycode" ? (
+          <ChangePass closeDialog={closeDialog} />
+        ) : null}
       </dialog>
     ) : null;
 
