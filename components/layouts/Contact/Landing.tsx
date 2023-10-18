@@ -45,7 +45,7 @@ const Landing = () => {
     } else {
       toast("Form submission failed");
     }
-    // reset()
+    reset()
   };
 
   return (

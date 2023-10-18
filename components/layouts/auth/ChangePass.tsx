@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ChangePass = ({ closeDialog }: Props) => {
-  const router = useRouter()
+  const router = useRouter();
 
   const {
     register,
@@ -37,13 +37,14 @@ const ChangePass = ({ closeDialog }: Props) => {
           body: formData,
         }
       );
-        const data = await res.json()
-      if (data.status === 'success') {
+      const data = await res.json();
+      if (data.status === "success") {
         toast("Your password has been changed");
-        router.push('?showDialog=y&type=signin')
+        router.push("?showDialog=y&type=signin");
         reset();
+      } else {
+        toast(data.message)
       }
-
     } catch (error: any) {
       console.log(error);
     }
