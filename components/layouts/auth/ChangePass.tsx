@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
+import { toast } from "react-hot-toast/headless";
 import { CgSpinner } from "react-icons/cg";
 import { MdClose } from "react-icons/md";
 
@@ -38,7 +39,7 @@ const ChangePass = ({ closeDialog }: Props) => {
       );
         const data = await res.json()
       if (data.status === 'success') {
-        alert("Your password has been changed");
+        toast("Your password has been changed");
         router.push('?showDialog=y&type=signin')
         reset();
       }

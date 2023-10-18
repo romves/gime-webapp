@@ -7,6 +7,7 @@ import {
   HiOutlineUserCircle,
 } from "react-icons/hi2";
 import { MdLogout } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const SignInButtonDesktop = () => {
   const { data: session } = useSession();
@@ -33,7 +34,10 @@ const SignInButtonDesktop = () => {
           )}
         </button>
         <button
-          onClick={() => signOut()}
+          onClick={() => {
+            toast("Logout Success");
+            signOut();
+          }}
           className={`${
             isDropdown ? "flex" : "hidden"
           } items-center gap-2 absolute bg-white px-8 py-4 rounded-b-2xl w-full`}

@@ -5,6 +5,7 @@ import { MdClose } from "react-icons/md";
 import { CgSpinner } from "react-icons/cg";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 interface Props {
   clickOk: () => void;
@@ -29,7 +30,7 @@ const SignIn = ({ clickOk, closeDialog }: Props) => {
       });
 
       if (res?.status == 200) {
-        alert("Signin Success")
+        toast("Signin success")
         closeDialog();
       }
     } catch (error: any) {

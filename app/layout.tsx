@@ -6,6 +6,7 @@ import { Instrument_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import Dialog from "@/components/ui/Dialog";
 import Providers from "@/components/Providers";
+import { Toaster } from "react-hot-toast";
 
 const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={instrumentSans.className}>
         <Providers>
+          <Toaster />
           <Dialog />
           <Navbar />
           {children}

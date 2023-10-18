@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 import { CgSpinner } from "react-icons/cg";
 import { MdClose } from "react-icons/md";
+import toast from 'react-hot-toast';
 
 interface Props {
   closeDialog: () => void;
@@ -36,7 +37,7 @@ const ForgotPass = ({ closeDialog }: Props) => {
 
       const data = await res.json()
       if (data.status === "success") {
-        alert("Check your email");
+        toast("Check your email!");
         router.push('?showDialog=y&type=verifycode')
       }
     } catch (error: any) {

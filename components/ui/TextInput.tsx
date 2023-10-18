@@ -1,29 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { forwardRef } from "react";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   id: string;
 }
 
-const TextInput = (props: Props) => {
+const TextInput = forwardRef(function TextInput(props: Props, ref: any) {
   const { label, id, type, className, ...rest } = props;
-  const [inputValue, setInputValue] = React.useState("");
-
-  const handleInputChange = (e: any) => {
-    setInputValue(e.target.value);
-  };
+  const [inputValue, setInputValue] = React.useState("x");
 
   return (
     <div className="relative mt-8 ">
       <input
+        ref={ref}
         id={id}
         type={type}
-        className={`${className} bg-transparent w-full focus:outline-none border-b border-black/50 py-1 focus:border-black transition-colors peer text-[16px] md:text-[24px]`}
+        className={`${className} bg-transparent w-full focus:outline-none border-b border-black/50 pt-1 focus:border-black transition-colors peer text-[16px] md:text-[24px]`}
         {...rest}
-        value={inputValue}
-        onChange={handleInputChange}
       />
       <label
         htmlFor={id}
@@ -37,6 +32,6 @@ const TextInput = (props: Props) => {
       </label>
     </div>
   );
-};
+});
 
 export default TextInput;

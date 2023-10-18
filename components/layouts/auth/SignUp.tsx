@@ -5,6 +5,7 @@ import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 import { CgSpinner } from "react-icons/cg";
+import toast from 'react-hot-toast';
 
 interface Props {
   clickOk: () => void;
@@ -42,7 +43,7 @@ const SignUp = ({ clickOk, closeDialog }: Props) => {
 
       const data = await response.json();
       if (data.status === "success") {
-        alert("Signup Success")
+        toast("Signup success")
         router.push("?showDialog=y&type=signin");
       } 
     } catch (error) {
