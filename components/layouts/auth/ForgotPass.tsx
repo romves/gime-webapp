@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const ForgotPass = ({ closeDialog }: Props) => {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -32,10 +34,10 @@ const ForgotPass = ({ closeDialog }: Props) => {
         }
       );
 
-      const response = await res.json()
-      if (response.status === "success") {
+      const data = await res.json()
+      if (data.status === "success") {
         alert("Check your email");
-        closeDialog();
+        router.push('?showDialog=y&type=verifycode')
       }
     } catch (error: any) {
       console.log(error);

@@ -40,8 +40,8 @@ const SignUp = ({ clickOk, closeDialog }: Props) => {
         }
       );
 
-      if (response.ok) {
-        const data = await response.json();
+      const data = await response.json();
+      if (data.status === "success") {
         alert("Signup Success")
         router.push("?showDialog=y&type=signin");
       } 
