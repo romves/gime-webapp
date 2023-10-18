@@ -1,7 +1,10 @@
 import Landing from "@/components/layouts/Contact/Landing";
 import Maps from "@/components/ui/Maps";
-import React from "react";
-import { BsTelephone, BsInbox } from "react-icons/bs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "GIME | Contact us",
+};
 
 const page = () => {
   return (

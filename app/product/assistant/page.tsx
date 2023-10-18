@@ -3,7 +3,12 @@ import Footer from "@/components/Footer";
 import AssistantInfo from "@/components/layouts/Product/AssistantInfo";
 import BookAssistant from "@/components/layouts/Product/BookAssistant";
 import ParallaxSection from "@/components/layouts/Product/ParallaxSection";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "GIME | Assistant",
+};
 
 const page = () => {
   return (
