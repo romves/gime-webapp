@@ -21,6 +21,7 @@
     "react-scroll": "^1.9.0"
   },
   "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.2",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.12",
     "@types/react": "^18",
