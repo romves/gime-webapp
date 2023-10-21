@@ -21,7 +21,7 @@ const ArticleCard = ({
         <Image
           src={artikel.imageUrl}
           alt="artikel-img"
-          className="object-cover hover:scale-110 transition-all"
+          className="object-cover hover:scale-110 transition-transform duration-300"
           fill
         />
       </div>

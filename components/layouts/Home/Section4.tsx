@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import { BsArrowRightCircle } from "react-icons/bs";
 
 const Section4 = () => {
   return (
@@ -58,14 +58,15 @@ const Section4 = () => {
           </div>
         </div>
 
-        <Link href="/product/assistant" className="flex hover:bg-neutral-800 items-center gap-12 py-8 px-6 md:px-16 justify-between md:justify-start transition-colors">
-          <h3 className="h4">Pelajari Lebih Lanjut </h3>
-          <Image
-            src="/icon/arrow-right-circle-white.svg"
-            alt="link--button"
-            width={45}
-            height={45}
-          />
+        <Link
+          href="/product/assistant"
+          className="relative group flex hover:border-b border-black items-center gap-12 py-8 px-6 md:px-16 justify-between md:justify-start transition-colors"
+        >
+          <div className="absolute bg-white group-hover:translate-x-[0%] translate-x-[-100%] w-full h-full transition-transform right-0 duration-500" />
+          <h3 className="h4 z-10 group-hover:text-black">
+            Pelajari Lebih Lanjut
+          </h3>
+          <BsArrowRightCircle className="text-4xl group-hover:text-black z-10 transition-colors duration-700" />
         </Link>
       </div>
     </>

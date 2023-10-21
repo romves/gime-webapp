@@ -8,6 +8,7 @@ const ScrollButton = () => {
   return (
     <Link
       to="scrollTarget"
+      href="/"
       smooth={true}
       duration={400}
       offset={-50}
