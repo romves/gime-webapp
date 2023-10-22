@@ -8,7 +8,7 @@ const Section2 = () => {
     <section className="flex">
       <div className="hidden md:flex relative flex-1 border">
         <Image
-          src="/images/robohand.svg"
+          src="/images/robohand.jpg"
           alt="section2-img"
           fill
           className="object-cover"
@@ -30,8 +30,10 @@ const Section2 = () => {
           className="relative group flex transition-colors justify-between items-center px-[8%] py-6  border-y md:border-b-0 border-black overflow-hidden hover:border-white"
         >
           <div className="absolute bg-[#111111] group-hover:translate-x-[0%] translate-x-[-100%] w-full h-full transition-transform right-0 duration-500" />
-          <h3 className="h3 group-hover:text-white z-10 transition-colors duration-500">Our Vision</h3>
-          <BsArrowRightCircle className="text-4xl group-hover:text-white z-10 transition-colors duration-700"/>
+          <h3 className="h3 group-hover:text-white z-10 transition-colors duration-500">
+            Our Vision
+          </h3>
+          <BsArrowRightCircle className="text-4xl group-hover:text-white z-10 transition-colors duration-700" />
         </Link>
       </div>
     </section>

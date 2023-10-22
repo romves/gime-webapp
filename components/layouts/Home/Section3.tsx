@@ -32,7 +32,7 @@ const Section3 = () => {
         <div
           className="hidden md:block relative flex-1 overflow-hidden rounded-3xl"
           style={{
-            backgroundImage: "url(/images/robot.svg)",
+            backgroundImage: "url(/images/robot.jpg)",
             backgroundPosition: "center",
             backgroundSize: 'cover',
             backgroundRepeat: "no-repeat"

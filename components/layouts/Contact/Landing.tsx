@@ -125,7 +125,7 @@ const Landing = () => {
 
           <div className="hidden lg:block relative flex-[.8] w-full rounded-l-xl overflow-hidden">
             <Image
-              src="/images/contact-img.svg"
+              src="/images/contact-img.png"
               alt="section-image"
               fill
               className="object-cover"
